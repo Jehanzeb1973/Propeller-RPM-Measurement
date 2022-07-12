@@ -8,9 +8,9 @@ U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 U8G2_SSD1309_128X64_NONAME0_F_4W_HW_SPI u8g2_2(U8G2_R0, /* cs=*/ 05, /* dc=*/ 2, /* reset=*/ 16);  
 
 
-int sensorPin = 15;    // select the input pin for the potentiometer
+int sensorPin = 15;    // select the input pin 
 int sensorValue = 0;  // variable to store the value coming from the sensor
-int propblades=2;
+int propblades=2; //no of propeller blades
 
 unsigned int revs=0;
 long millisold=0;
@@ -43,7 +43,6 @@ void setup() {
 void loop() {
   int RPM=0;
   // read the value from the sensor:
-  //sensorValue = analogRead(sensorPin);
     RPM=(revs*60000)/(propblades*(millis()-timeold));
      revs=0;
 timeold=millis();
